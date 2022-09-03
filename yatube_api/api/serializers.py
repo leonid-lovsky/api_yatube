@@ -29,7 +29,7 @@ class CommentSerializer(serializers.ModelSerializer):
 
 class FollowSerializer(serializers.ModelSerializer):
     user = serializers.CharField(source='username')
-    following = serializers.CharField(source='username')
+    following = serializers.CharField(source='username', required=True)
 
     class Meta:
         fields = '__all__'
