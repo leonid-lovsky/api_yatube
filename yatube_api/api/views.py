@@ -38,7 +38,8 @@ class CommentViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         post_id = self.kwargs.get('post_id')
         post = get_object_or_404(Post, id=post_id)
-        return post.comments
+        comments = post.comments
+        return comments
 
 
 class FollowViewSet(
@@ -52,8 +53,7 @@ class FollowViewSet(
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
 
-    # def get_queryset(self):
-    #     user = self.request.user
-    # follow = Follow.objects.filter('followers')
-    # post = get_object_or_404(Post, id=post_id)
-    # return post.comments
+    def get_queryset(self):
+        user = self.request.user
+        follow = Follow.objects.filter(user=user)
+        return follow
