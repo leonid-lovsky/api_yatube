@@ -52,7 +52,8 @@ class FollowViewSet(
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
 
-    def get_queryset(self):
-        user = self.request.user
-        # post = get_object_or_404(Post, id=post_id)
-        # return post.comments
+    # def get_queryset(self):
+    #     user = self.request.user
+    # follow = Follow.objects.filter('followers')
+    # post = get_object_or_404(Post, id=post_id)
+    # return post.comments
