@@ -1,4 +1,4 @@
-from rest_framework import viewsets, mixins
+from rest_framework import viewsets, mixins, filters
 from rest_framework.generics import get_object_or_404
 from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.permissions import IsAuthenticated
@@ -49,6 +49,8 @@ class FollowViewSet(
     serializer_class = FollowSerializer
     permission_classes = (IsAuthenticated,)
     pagination_class = None
+    filter_backends = (filters.SearchFilter,)
+    search_fields = ('following__username',)
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
