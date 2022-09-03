@@ -9,13 +9,6 @@ from api.serializers import PostSerializer, CommentSerializer, \
 from posts.models import Post, Comment, Group, Follow
 
 
-class GroupViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Group.objects.all()
-    serializer_class = GroupSerializer
-    permission_classes = (ReadOnly,)
-    pagination_class = None
-
-
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
@@ -40,6 +33,13 @@ class CommentViewSet(viewsets.ModelViewSet):
         post = get_object_or_404(Post, id=post_id)
         comments = post.comments
         return comments
+
+
+class GroupViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Group.objects.all()
+    serializer_class = GroupSerializer
+    permission_classes = (ReadOnly,)
+    pagination_class = None
 
 
 class FollowViewSet(
