@@ -86,8 +86,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static/'),)
-
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
@@ -101,8 +99,3 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
     'AUTH_HEADER_TYPES': ('Bearer',),
 }
-
-# MEDIA_URL = '/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-# DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
