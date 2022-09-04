@@ -1,9 +1,9 @@
-from rest_framework import viewsets, mixins, filters, generics, pagination, \
-    permissions
+from rest_framework import (
+    viewsets, mixins, filters, generics, pagination, permissions)
 
 from api.permissions import IsAuthorOrReadOnly
-from api.serializers import PostSerializer, CommentSerializer, \
-    GroupSerializer, FollowSerializer
+from api.serializers import (
+    PostSerializer, CommentSerializer, GroupSerializer, FollowSerializer)
 from posts.models import Post, Comment, Group, Follow
 
 
