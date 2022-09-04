@@ -131,20 +131,17 @@ GET /api/v1/posts/<post_id>/comments/<comment_id>/
 
 ```
 HTTP 200 OK
-Allow: GET, POST, HEAD, OPTIONS
+Allow: GET, PUT, PATCH, DELETE, HEAD, OPTIONS
 Content-Type: application/json
 Vary: Accept
 
-[
-    {
-        "id": 1,
-        "author": "TestUser",
-        "text": "Комментарий 1",
-        "created": "2022-09-04T16:46:51.990803Z",
-        "post": 1
-    },
-    ...
-]
+{
+    "id": 1,
+    "author": "TestUser",
+    "text": "Коммент 1",
+    "created": "2022-09-04T16:46:51.990803Z",
+    "post": 1
+}
 ```
 
 - Список сообществ
