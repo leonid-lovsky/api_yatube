@@ -35,10 +35,12 @@ class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         fields = '__all__'
         model = Comment
-        read_only_fields = ('pub_date',)
+        read_only_fields = ('created', 'post')
 
 
 class GroupSerializer(serializers.ModelSerializer):
+    description = serializers.CharField(required=False)
+
     class Meta:
         model = Group
         fields = '__all__'

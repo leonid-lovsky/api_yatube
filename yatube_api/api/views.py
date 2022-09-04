@@ -30,7 +30,9 @@ class CommentViewSet(viewsets.ModelViewSet):
         return post.comments
 
     def perform_create(self, serializer):
-        serializer.save(author=self.request.user)
+        post_id = self.kwargs.get('post_id')
+        post = generics.get_object_or_404(Post, id=post_id)
+        serializer.save(author=self.request.user, post=post)
 
 
 class GroupViewSet(viewsets.ReadOnlyModelViewSet):
