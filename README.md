@@ -1,13 +1,19 @@
-# api_final
+# Yatube-API
+API для проекта Yatube
 
-api final
+## Зависимости
+- Django==2.2.16
+- pytest==6.2.4
+- pytest-pythonpath==0.7.3
+- pytest-django==4.4.0
+- djangorestframework==3.12.4
+- djangorestframework-simplejwt==4.7.2
+- Pillow==8.3.1
+- PyJWT==2.1.0
+- requests==2.26.0
+- djoser==2.1.0
 
-### Описание
-
-Финальный проект «API для Yatube»
-
-### Установка
-
+## Установка
 Клонировать репозиторий и перейти в него в командной строке:
 
 ```
@@ -50,7 +56,7 @@ python3 manage.py migrate
 python3 manage.py runserver
 ```
 
-### Примеры
+## Примеры
 
 - Получение публикаций
 
