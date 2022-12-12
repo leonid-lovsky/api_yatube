@@ -21,7 +21,7 @@ git clone https://github.com/leonid-lovsky/api_yatube
 ```
 
 ```
-cd Yatube-API
+cd api_yatube
 ```
 
 Создать и активировать виртуальное окружение:
