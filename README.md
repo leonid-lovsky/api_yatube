@@ -1,4 +1,4 @@
-# Yatube-API
+# API Yatube
 API для проекта Yatube
 
 ## Зависимости
